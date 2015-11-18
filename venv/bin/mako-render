@@ -1,4 +1,4 @@
-#!/home/a-karpenko-note/projects/Python/virtenvs/Projects-Active/chat-flasky/venv/bin/python
+#!/home/a-karpenko-note/projects/Python/virtenvs/Projects-Active/flask_chat/venv/bin/python
 
 # -*- coding: utf-8 -*-
 import re

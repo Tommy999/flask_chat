@@ -8,11 +8,13 @@
     <div class="page-header">
         <h1>Login</h1>
     </div>
-    <div class="col-md-4">
+    <div class="login_form">
         {{ wtf.quick_form(login_form) }}
     </div>
     <p>
         New user?
         <a href="{{ url_for('auth.register') }}">Click here to register</a>
+        or
+        <a href="{{ url_for('auth.create_workgroup') }}">Create workgroup</a>
     </p>
 {%endblock%}

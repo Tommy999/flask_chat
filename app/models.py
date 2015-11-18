@@ -3,6 +3,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from . import login_manager
 from flask.ext.login import UserMixin
 
+
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id))
@@ -18,11 +19,22 @@ class Role(db.Model):
         return '<Role %r>' % self.name
 
 
+class Worgroup(db.Model):
+    __tablename__ = 'workgroups'
+    id = db.Column(db.Integer, primary_key=True)
+    workgroup_name = db.Column(db.String(64), unique=True)
+    user = db.relationship('User', backref='Worgroup')
+
+    def __repr__(self):
+        return '<Workgroup %r>' % self.workgroup_name
+
+
 class User(UserMixin, db.Model):
     __tablename__ = 'users'
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(64), unique=True, index=True)
     role_id = db.Column(db.Integer, db.ForeignKey('roles.id'))
+    workgroup_id = db.Column(db.Integer, db.ForeignKey('workgroups.id'))
     password_hash = db.Column(db.String(128))
 
     @property
