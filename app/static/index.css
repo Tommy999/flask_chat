@@ -1,4 +1,37 @@
-.navbarel {
-    margin: 5px;
-    color: #3366CC;
+
+.navbar{
+    border: 4px solid;
+    border-radius: 12px;
+    border-color:#014656;
+    background:#00a2ad;
+
+}
+
+.menu{
+
+    float:right;
+    margin-right:5%;
+    margin-top:0.5%;
+
+}
+.menu li{
+
+    display: inline;
+    list-style-type: none;
+
+    margin-left:15px;
+}
+.menu a{
+    text-decoration: none;
+    color:#fdd65d;
+    font-family: 'Indie Flower', cursive;
+    font-weight: bold;
+    font-size: 14pt;
+}
+.titel{
+
+    width:auto;
+    margin-left: 40%;
+    font-family: 'Indie Flower', cursive;
+    font-size: 38pt;
 }
